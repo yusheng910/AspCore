@@ -1,0 +1,56 @@
+﻿@model prjToDoList.ViewModels.UserViewModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+@section Styles{
+    <style>
+        .form-group {
+            margin-top: 10px;
+        }
+    </style>
+}
+
+<h1>Edit your profile</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <input type="hidden" name="fUserId" value="@Model.fUserId">
+
+            <div class="form-group">
+                <label for="fUserName" class="control-label">User Name</label>
+                <input name="fUserName" class="form-control" value="@Model.fUserName" required />
+                <span asp-validation-for="fUserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="oldPassword" class="control-label">Old Password</label>
+                <input type="password" name="oldPassword" class="form-control" required />
+                <span asp-validation-for="oldPassword" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="fPassword" class="control-label">New Password</label>
+                <input type="password" name="fPassword" class="form-control" required />
+                <span asp-validation-for="fPassword" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="fMobile" class="control-label">Mobile</label>
+                <input name="fMobile" class="form-control" value="@Model.fMobile" />
+                <span asp-validation-for="fMobile" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

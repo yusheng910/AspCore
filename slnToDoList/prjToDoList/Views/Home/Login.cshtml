@@ -1,0 +1,75 @@
+﻿@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="vh-100 d-flex justify-content-center align-items-center">
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="col-12 col-md-8 col-lg-6">
+                <div class="border border-3 border-primary"></div>
+                <div class="card bg-white">
+                    <div class="card-body p-5">
+                        <form method="post" class="mb-3 mt-md-4">
+                            <h2 class="fw-bold mb-2">YS To Do List Service</h2>
+                            <p class=" mb-5">Please enter your login and password!</p>
+                            <div class="mb-3">
+                                <label for="email" class="form-label ">Email address</label>
+                                <input type="email" class="form-control" id="email" name="loginAccount" placeholder="name@example.com" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label ">Password</label>
+                                <input type="password" class="form-control" id="password" name="loginPassword" placeholder="*******" required>
+                            </div>
+                            <div class="d-grid">
+                                <button class="btn btn-outline-dark" type="submit">Login</button>
+                            </div>
+                            <div style="margin-top:10px;" class="mb-3 d-flex justify-content-end">
+                                <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#resetPwdModal">
+                                    Forgot Password
+                                </button>
+                            </div>
+
+                        </form>
+                        <div>
+                            <p class="mb-0  text-center">
+                                Don't have an account?
+                                <a href="/User/Create" class="text-primary fw-bold">
+                                    Sign Up
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="resetPwdModal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="ModalLabel">Forget password?</h1>
+                <button type="button" class="btn-close modal-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="emailAddress" class="col-form-label">Enter registered E-mail to reset password:</label>
+                        <input type="email" class="form-control" id="emailAddress" required>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary modal-close" data-bs-dismiss="modal">Close</button>
+                <button type="button" id="resetPwd" class="btn btn-primary">Reset password</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/frontend/CommonFn.js"></script>
+    <script src="~/js/frontend/Login.js"></script>
+}

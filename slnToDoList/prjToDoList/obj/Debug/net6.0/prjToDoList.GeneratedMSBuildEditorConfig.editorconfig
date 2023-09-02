@@ -1,0 +1,77 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = prjToDoList
+build_property.RootNamespace = prjToDoList
+build_property.ProjectDir = C:\Users\YuSheng\Desktop\SelfDirected\ASP\aspCoreCode\slnToDoList\prjToDoList\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\YuSheng\Desktop\SelfDirected\ASP\aspCoreCode\slnToDoList\prjToDoList
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/YuSheng/Desktop/SelfDirected/ASP/aspCoreCode/slnToDoList/prjToDoList/Views/Demo/CookieDemo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVtb1xDb29raWVEZW1vLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/YuSheng/Desktop/SelfDirected/ASP/aspCoreCode/slnToDoList/prjToDoList/Views/Demo/SessionDemo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVtb1xTZXNzaW9uRGVtby5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/YuSheng/Desktop/SelfDirected/ASP/aspCoreCode/slnToDoList/prjToDoList/Views/Demo/UploadDemo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVtb1xVcGxvYWREZW1vLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/YuSheng/Desktop/SelfDirected/ASP/aspCoreCode/slnToDoList/prjToDoList/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/YuSheng/Desktop/SelfDirected/ASP/aspCoreCode/slnToDoList/prjToDoList/Views/Home/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/YuSheng/Desktop/SelfDirected/ASP/aspCoreCode/slnToDoList/prjToDoList/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/YuSheng/Desktop/SelfDirected/ASP/aspCoreCode/slnToDoList/prjToDoList/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/YuSheng/Desktop/SelfDirected/ASP/aspCoreCode/slnToDoList/prjToDoList/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/YuSheng/Desktop/SelfDirected/ASP/aspCoreCode/slnToDoList/prjToDoList/Views/Todo/List.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG9kb1xMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/YuSheng/Desktop/SelfDirected/ASP/aspCoreCode/slnToDoList/prjToDoList/Views/User/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/YuSheng/Desktop/SelfDirected/ASP/aspCoreCode/slnToDoList/prjToDoList/Views/User/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/YuSheng/Desktop/SelfDirected/ASP/aspCoreCode/slnToDoList/prjToDoList/Views/User/List.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/YuSheng/Desktop/SelfDirected/ASP/aspCoreCode/slnToDoList/prjToDoList/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/YuSheng/Desktop/SelfDirected/ASP/aspCoreCode/slnToDoList/prjToDoList/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/YuSheng/Desktop/SelfDirected/ASP/aspCoreCode/slnToDoList/prjToDoList/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-qoqvzfhurn

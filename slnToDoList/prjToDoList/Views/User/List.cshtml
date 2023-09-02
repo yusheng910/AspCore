@@ -1,0 +1,65 @@
+﻿@model List<prjToDoList.ViewModels.UserViewModel>
+
+@{
+    ViewData["Title"] = "List";
+}
+
+<h1>List</h1>
+<form method="post" action="">
+    關鍵字 <input type="text" name="keyword" />
+    <input type="submit" value="查詢" />
+</form>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model[0].fUserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model[0].fPassword)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model[0].fEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model[0].fMobile)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            int count = 0;
+            foreach (var item in Model)
+            {
+                count++;
+                <tr>
+                    <td>
+                        @count
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.fUserName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.fPassword)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.fEmail)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.fMobile)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id=item.fUserId })
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
