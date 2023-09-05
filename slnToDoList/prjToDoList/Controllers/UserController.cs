@@ -117,7 +117,7 @@ namespace prjToDoList.Controllers
                     }
                 }
             }
-            return RedirectToAction("List");
+            return RedirectToAction("List", "Todo");
         }
     }
 }

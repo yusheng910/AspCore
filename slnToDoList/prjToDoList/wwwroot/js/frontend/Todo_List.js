@@ -15,6 +15,35 @@ $(".addedDate").each(function (index, element) {
     $(element).text(`Created on ${dateShown}`);
 });
 
+var select = $(".select");
+select.on("change", function () {
+    var selectedValue = $(this).val();
+    var ulElements = $("ul[data-taskid]");
+
+    if (selectedValue === "2") {
+        ulElements.each(function () {
+            var todoContent = $(this).find(".todocontent");
+            if (!todoContent.hasClass("crossout")) {
+                $(this).hide();
+            } else {
+                $(this).show();
+            }
+        });
+    } else if (selectedValue === "3") {
+        ulElements.each(function () {
+            var todoContent = $(this).find(".todocontent");
+            if (todoContent.hasClass("crossout")) {
+                $(this).hide();
+            } else {
+                $(this).show();
+            }
+        });
+    } else {
+        // selectedValue === "All"
+        ulElements.show();
+    }
+});
+
 // Change task Status function
 $("#todoContainer").on("click", ".todocontent", function () {
     var $this = $(this); // save $(this) variable so it can be used in ajax call
@@ -28,8 +57,18 @@ $("#todoContainer").on("click", ".todocontent", function () {
             // 更新成功後，改變項目的顯示狀態
             if (response.isDone) {
                 $this.addClass("crossout");
+                setTimeout(function () {
+                    if ($(".select").val() == 3) {
+                        $this.closest("ul").hide();
+                    }
+                }, 300);
             } else {
                 $this.removeClass("crossout");
+                setTimeout(function () {
+                    if ($(".select").val() == 2) {
+                        $this.closest("ul").hide();
+                    }
+                }, 300);
             }
         },
         error: function (e) {
@@ -51,11 +90,11 @@ $("#todoContainer").on("click", ".delete-button", function () {
     if (confirmation) {
         var $this = $(this); // save $(this) variable so it can be used in ajax call
         var taskId = $this.closest("ul").data("taskid");
-        
+
         console.log(taskId)
 
         $.ajax({
-            url: "/api/ToDoAPI/" + taskId, 
+            url: "/api/ToDoAPI/" + taskId,
             type: "DELETE",
             success: function (response) {
                 console.log(response);
@@ -65,7 +104,7 @@ $("#todoContainer").on("click", ".delete-button", function () {
                 console.log("Error: " + e.responseJSON.status);
                 alert("Failed in deleting task");
             }
-        });   
+        });
     }
 });
 
@@ -103,7 +142,8 @@ function RenderAndReset(taskContent, addedDate, taskId) {
 
     var dateStored = new Date(addedDate)
     var dateShown = dateStored.toLocaleDateString('zh-TW', { year: 'numeric', month: '2-digit', day: '2-digit' }).replace(/\//g, '-');
-
+    // reset select to all once new task added 
+    $(".select").val("1").trigger("change");
     $("#todoContainer").append(`                                
             <ul class="list-group list-group-horizontal rounded-0 bg-transparent" data-taskid="${taskId}">
                 <li class="list-group-item d-flex align-items-center ps-0 pe-3 py-1 rounded-0 border-0 bg-transparent serialnum">
