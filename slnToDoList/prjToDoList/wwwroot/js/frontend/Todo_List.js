@@ -1,18 +1,17 @@
-﻿$(".list-group-item").hover(
-    function () {
-        $(this).addClass("highlight");
-    },
-    function () {
-        $(this).removeClass("highlight");
-    }
-);
+﻿$("#todoContainer").on("mouseenter", ".list-group-item", function () {
+    $(this).addClass("highlight");
+});
+
+$("#todoContainer").on("mouseleave", ".list-group-item", function () {
+    $(this).removeClass("highlight");
+});
 
 $(".addedDate").each(function (index, element) {
     var dateStringStored = $(element).text();
     var dateStored = new Date(dateStringStored);
     var dateShown = dateStored.toLocaleDateString('zh-TW', { year: 'numeric', month: '2-digit', day: '2-digit' }).replace(/\//g, '-');
 
-    $(element).text(`Created on ${dateShown}`);
+    $(element).text(`Added on ${dateShown}`);
 });
 
 var select = $(".select");
@@ -57,6 +56,7 @@ $("#todoContainer").on("click", ".todocontent", function () {
             // 更新成功後，改變項目的顯示狀態
             if (response.isDone) {
                 $this.addClass("crossout");
+                $this.find('.taskCheckInput').prop('checked', true);
                 setTimeout(function () {
                     if ($(".select").val() == 3) {
                         $this.closest("ul").hide();
@@ -64,6 +64,7 @@ $("#todoContainer").on("click", ".todocontent", function () {
                 }, 300);
             } else {
                 $this.removeClass("crossout");
+                $this.find('.taskCheckInput').prop('checked', false);
                 setTimeout(function () {
                     if ($(".select").val() == 2) {
                         $this.closest("ul").hide();
@@ -116,6 +117,9 @@ $("#add-button").on("click", function (e) {
     if ($addContent == "") {
         alert("Forget something to add?")
 
+    } else if ($addContent.length > 100) {
+        alert("Task content should not exceed 100 characters");
+
     } else {
         $("#add-button").prop('disabled', true);
         $.ajax({
@@ -132,7 +136,7 @@ $("#add-button").on("click", function (e) {
             error: function (e) {
                 console.log("Failed in API: " + e.responseJSON.status);
                 alert("Failed in adding task");
-
+                $("#add-button").prop('disabled', false);
             }
         })
     }
@@ -146,19 +150,17 @@ function RenderAndReset(taskContent, addedDate, taskId) {
     $(".select").val("1").trigger("change");
     $("#todoContainer").append(`                                
             <ul class="list-group list-group-horizontal rounded-0 bg-transparent" data-taskid="${taskId}">
-                <li class="list-group-item d-flex align-items-center ps-0 pe-3 py-1 rounded-0 border-0 bg-transparent serialnum">
-                    *
-                </li>
                 <li class="list-group-item px-3 py-1 d-flex align-items-center flex-grow-1 border-0 bg-transparent todocontent">
+                    <input class="form-check-input taskCheckInput" type="checkbox">
                     <p class="lead fw-normal mb-0">${taskContent}</p>
                 </li>
                 <li class="list-group-item ps-3 pe-0 py-1 rounded-0 border-0 bg-transparent">
                     <div class="d-flex flex-row justify-content-end mb-1">
                         <a href="#!" class="text-danger delete-button" data-mdb-toggle="tooltip" title="Delete todo">
-                            <i class="fas fa-trash-alt"></i>
+                            Delete <i class="fas fa-trash-alt"></i>
                         </a>
                     </div>
-                    <p class="small mb-0 addedDate">Created on ${dateShown}</p>
+                    <p class="small mb-0 addedDate">Added on ${dateShown}</p>
                 </li>
             </ul>            
         `);

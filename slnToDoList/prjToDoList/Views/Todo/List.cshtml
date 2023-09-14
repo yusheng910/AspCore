@@ -21,19 +21,32 @@
         .list-group-item.todocontent {
             transition: background-color 0.3s;
             cursor: pointer;
+            min-width: 68%;
+            max-width: 83%;
         }
 
             .list-group-item.todocontent.highlight {
                 background-color: #E0E0E0 !important;
             }
 
+            .list-group-item.todocontent p {
+                min-width: 80%;
+                max-width: 83%;           
+            }
+
             .list-group-item.todocontent.crossout {
                 text-decoration: line-through;
+            }
+
+            .taskCheckInput {
+                width:1rem; 
+                height:1rem; 
+                margin-right:12px;
             }
     </style>
 }
 <section class="vh-100">
-    <div class="container py-5 h-100">
+    <div class="container py-5">
         <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col">
                 <div class="card" id="list1" style="border-radius: .75rem; background-color: #eff1f2;">
@@ -59,7 +72,7 @@
 
                         <hr class="my-4">
 
-                        <div class="d-flex justify-content-end align-items-center mb-4 pt-2 pb-3">
+                        <div class="d-flex justify-content-end align-items-center mb-4 pt-2">
                             <p class="small mb-0 me-2 text-muted">Filter</p>
                             <select class="select">
                                 <option value="1">All</option>
@@ -73,17 +86,15 @@
                         @{
                             foreach (var item in Model)
                             {
-                                    <ul class="list-group list-group-horizontal rounded-0 bg-transparent" data-taskid="@item.fTaskId">
-                                    <li class="list-group-item d-flex align-items-center ps-0 pe-3 py-1 rounded-0 border-0 bg-transparent serialnum">
-                                        *
-                                    </li>
-                                    <li class="list-group-item px-3 py-1 d-flex align-items-center flex-grow-1 border-0 bg-transparent todocontent @{if(item.fIsDone){<text>crossout</text>}}">
+                                <ul class="list-group list-group-horizontal rounded-0 bg-transparent" data-taskid="@item.fTaskId">
+                                    <li class="list-group-item px-3 d-flex align-items-center flex-grow-1 border-0 bg-transparent todocontent @if(item.fIsDone){ <text>crossout</text> }">
+                                        <input class="form-check-input taskCheckInput" type="checkbox" @if(item.fIsDone){ <text>checked</text> } >
                                         <p class="lead fw-normal mb-0">@item.fTaskContent</p>
                                     </li>
-                                    <li class="list-group-item ps-3 pe-0 py-1 rounded-0 border-0 bg-transparent">
+                                        <li class="list-group-item ps-3 pe-0 py-1 rounded-0 border-0 bg-transparent">
                                         <div class="d-flex flex-row justify-content-end mb-1">
                                             <a href="#!" class="text-danger delete-button" data-mdb-toggle="tooltip" title="Delete todo">
-                                                <i class="fas fa-trash-alt"></i>
+                                                Delete <i class="fas fa-trash-alt"></i>
                                             </a>
                                         </div>
                                         <p class="small mb-0 addedDate">@item.fAddedDate</p>
